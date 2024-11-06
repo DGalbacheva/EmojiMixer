@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class EmojiMixerViewController: UIViewController {
+final class EmojiMixesViewController: UIViewController {
     private let emojies = [
         "🍇", "🍈", "🍉", "🍊", "🍋", "🍌", "🍍", "🥭", "🍎", "🍏", "🍐", "🍒",
         "🍓", "🫐", "🥝", "🍅", "🫒", "🥥", "🥑", "🍆", "🥔", "🥕", "🌽", "🌶️",
@@ -21,7 +21,7 @@ final class EmojiMixerViewController: UIViewController {
             frame: .zero,
             collectionViewLayout: UICollectionViewFlowLayout()
         )
-        collectionView.register(EmojiMixerViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(EmojiMixCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         return collectionView
     }()
     
@@ -39,10 +39,10 @@ final class EmojiMixerViewController: UIViewController {
     
     @objc
     private func addNextEmoji() {
-        guard visibleEmojies.count < emojies.count else { return }
+        guard visibleEmojis.count < emojies.count else { return }
         
-        let nextEmojiIndex = visibleEmojies.count
-        visibleEmojies.append(emojies[nextEmojiIndex])
+        let nextEmojiIndex = visibleEmojis.count
+        visibleEmojis.append(emojies[nextEmojiIndex])
         collectionView.performBatchUpdates {
             collectionView.insertItems(at: [IndexPath(item: nextEmojiIndex, section: 0)])
         }
@@ -50,10 +50,10 @@ final class EmojiMixerViewController: UIViewController {
     
     @objc
     private func removeLastEmoji() {
-        guard visibleEmojies.count > 0 else { return }
+        guard visibleEmojis.count > 0 else { return }
         
-        let lastEmojiIndex = visibleEmojies.count - 1
-        visibleEmojies.removeLast()
+        let lastEmojiIndex = visibleEmojis.count - 1
+        visibleEmojis.removeLast()
         collectionView.performBatchUpdates {
             collectionView.deleteItems(at: [IndexPath(item: lastEmojiIndex, section: 0)])
         }
@@ -78,7 +78,7 @@ extension EmojiMixesViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        return visibleEmojies.count
+        return visibleEmojis.count
     }
     
     func collectionView(
@@ -87,7 +87,7 @@ extension EmojiMixesViewController: UICollectionViewDataSource {
     ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! EmojiMixCollectionViewCell
         
-        cell.titleLabel.text = visibleEmojies[indexPath.row]
+        cell.titleLabel.text = visibleEmojis[indexPath.row]
         return cell
     }
 }
