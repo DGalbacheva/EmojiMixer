@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  EmojiMixer
 //
-//  Created by MacBook Pro 15 on 31.10.2024.
+//  Created by Doroteya Galbacheva on 31.10.2024.
 //
 
 import UIKit

@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		334269442CD352D70033762F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334269432CD352D70033762F /* AppDelegate.swift */; };
 		334269462CD352D70033762F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334269452CD352D70033762F /* SceneDelegate.swift */; };
-		334269482CD352D70033762F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334269472CD352D70033762F /* ViewController.swift */; };
+		334269482CD352D70033762F /* EmojiMixesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334269472CD352D70033762F /* EmojiMixesViewController.swift */; };
 		3342694B2CD352D70033762F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3342694A2CD352D70033762F /* Base */; };
 		3342694D2CD352D90033762F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3342694C2CD352D90033762F /* Assets.xcassets */; };
 		334269502CD352D90033762F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3342694F2CD352D90033762F /* Base */; };
+		334269582CD355C60033762F /* EmojiMixCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334269572CD355C60033762F /* EmojiMixCollectionViewCell.swift */; };
+		3342695B2CD356D50033762F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 334269592CD356D50033762F /* Model.xcdatamodeld */; };
+		334269AF2CDB3F320033762F /* EmojiMixStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334269AE2CDB3F320033762F /* EmojiMixStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		334269402CD352D70033762F /* EmojiMixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiMixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		334269432CD352D70033762F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		334269452CD352D70033762F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		334269472CD352D70033762F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		334269472CD352D70033762F /* EmojiMixesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMixesViewController.swift; sourceTree = "<group>"; };
 		3342694A2CD352D70033762F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3342694C2CD352D90033762F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3342694F2CD352D90033762F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		334269512CD352D90033762F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		334269572CD355C60033762F /* EmojiMixCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMixCollectionViewCell.swift; sourceTree = "<group>"; };
+		3342695A2CD356D50033762F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		334269AE2CDB3F320033762F /* EmojiMixStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMixStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,42 @@
 		334269422CD352D70033762F /* EmojiMixer */ = {
 			isa = PBXGroup;
 			children = (
+				334269AD2CDB3F220033762F /* Domain */,
+				334269AC2CDB3EF90033762F /* UI */,
 				334269432CD352D70033762F /* AppDelegate.swift */,
 				334269452CD352D70033762F /* SceneDelegate.swift */,
-				334269472CD352D70033762F /* ViewController.swift */,
+				3342695C2CD3575A0033762F /* CoreData */,
 				334269492CD352D70033762F /* Main.storyboard */,
 				3342694C2CD352D90033762F /* Assets.xcassets */,
 				3342694E2CD352D90033762F /* LaunchScreen.storyboard */,
 				334269512CD352D90033762F /* Info.plist */,
 			);
 			path = EmojiMixer;
+			sourceTree = "<group>";
+		};
+		3342695C2CD3575A0033762F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				334269592CD356D50033762F /* Model.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		334269AC2CDB3EF90033762F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				334269472CD352D70033762F /* EmojiMixesViewController.swift */,
+				334269572CD355C60033762F /* EmojiMixCollectionViewCell.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		334269AD2CDB3F220033762F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				334269AE2CDB3F320033762F /* EmojiMixStore.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +171,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				334269482CD352D70033762F /* ViewController.swift in Sources */,
+				334269482CD352D70033762F /* EmojiMixesViewController.swift in Sources */,
+				334269582CD355C60033762F /* EmojiMixCollectionViewCell.swift in Sources */,
+				3342695B2CD356D50033762F /* Model.xcdatamodeld in Sources */,
+				334269AF2CDB3F320033762F /* EmojiMixStore.swift in Sources */,
 				334269442CD352D70033762F /* AppDelegate.swift in Sources */,
 				334269462CD352D70033762F /* SceneDelegate.swift in Sources */,
 			);
@@ -363,6 +399,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		334269592CD356D50033762F /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3342695A2CD356D50033762F /* Model.xcdatamodel */,
+			);
+			currentVersion = 3342695A2CD356D50033762F /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 334269382CD352D70033762F /* Project object */;
 }
