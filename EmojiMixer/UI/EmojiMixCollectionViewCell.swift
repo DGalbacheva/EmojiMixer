@@ -10,6 +10,17 @@ import UIKit
 final class EmojiMixCollectionViewCell: UICollectionViewCell {
     let titleLabel: UILabel = UILabel()
     
+    var viewModel: EmojiMixViewModel! {
+        didSet {
+            viewModel.emojiBinding  = { [weak self] emojis in
+                self?.titleLabel.text = emojis
+            }
+            viewModel.backgroundColorBinding = { [weak self] backgroundColor in
+                self?.contentView.backgroundColor = backgroundColor
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -24,5 +35,11 @@ final class EmojiMixCollectionViewCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        viewModel.emojiBinding = nil
+        viewModel.backgroundColorBinding = nil
     }
 }
