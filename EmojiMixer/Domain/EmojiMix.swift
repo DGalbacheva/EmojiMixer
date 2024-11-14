@@ -8,6 +8,6 @@
 import UIKit
 
 struct EmojiMix {
-    let emojis: String
+    let emojies: String
     let backgroundColor: UIColor
 }
