@@ -21,6 +21,7 @@
 		33996D7C2CE6000300C9C990 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33996D7B2CE6000300C9C990 /* Binding.swift */; };
 		33996D7E2CE600B600C9C990 /* EmojiMixViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33996D7D2CE600B600C9C990 /* EmojiMixViewModel.swift */; };
 		33996D822CE6047C00C9C990 /* EmojiMixFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33996D812CE6047C00C9C990 /* EmojiMixFactory.swift */; };
+		33996D842CE604DD00C9C990 /* EmojiMixesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33996D832CE604DD00C9C990 /* EmojiMixesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		33996D7B2CE6000300C9C990 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		33996D7D2CE600B600C9C990 /* EmojiMixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMixViewModel.swift; sourceTree = "<group>"; };
 		33996D812CE6047C00C9C990 /* EmojiMixFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMixFactory.swift; sourceTree = "<group>"; };
+		33996D832CE604DD00C9C990 /* EmojiMixesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMixesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				334269572CD355C60033762F /* EmojiMixCollectionViewCell.swift */,
 				33996D7B2CE6000300C9C990 /* Binding.swift */,
 				33996D7D2CE600B600C9C990 /* EmojiMixViewModel.swift */,
+				33996D832CE604DD00C9C990 /* EmojiMixesViewModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				334269B32CDB42E10033762F /* EmojiMix.swift in Sources */,
 				33996D7C2CE6000300C9C990 /* Binding.swift in Sources */,
 				334269AF2CDB3F320033762F /* EmojiMixStore.swift in Sources */,
+				33996D842CE604DD00C9C990 /* EmojiMixesViewModel.swift in Sources */,
 				334269442CD352D70033762F /* AppDelegate.swift in Sources */,
 				334269462CD352D70033762F /* SceneDelegate.swift in Sources */,
 				33996D822CE6047C00C9C990 /* EmojiMixFactory.swift in Sources */,
