@@ -19,6 +19,7 @@
 		334269B12CDB406A0033762F /* UIColorMarshalling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334269B02CDB406A0033762F /* UIColorMarshalling.swift */; };
 		334269B32CDB42E10033762F /* EmojiMix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334269B22CDB42E10033762F /* EmojiMix.swift */; };
 		33996D7C2CE6000300C9C990 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33996D7B2CE6000300C9C990 /* Binding.swift */; };
+		33996D7E2CE600B600C9C990 /* EmojiMixViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33996D7D2CE600B600C9C990 /* EmojiMixViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		334269B02CDB406A0033762F /* UIColorMarshalling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorMarshalling.swift; sourceTree = "<group>"; };
 		334269B22CDB42E10033762F /* EmojiMix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMix.swift; sourceTree = "<group>"; };
 		33996D7B2CE6000300C9C990 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		33996D7D2CE600B600C9C990 /* EmojiMixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMixViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				334269472CD352D70033762F /* EmojiMixesViewController.swift */,
 				334269572CD355C60033762F /* EmojiMixCollectionViewCell.swift */,
 				33996D7B2CE6000300C9C990 /* Binding.swift */,
+				33996D7D2CE600B600C9C990 /* EmojiMixViewModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				334269AF2CDB3F320033762F /* EmojiMixStore.swift in Sources */,
 				334269442CD352D70033762F /* AppDelegate.swift in Sources */,
 				334269462CD352D70033762F /* SceneDelegate.swift in Sources */,
+				33996D7E2CE600B600C9C990 /* EmojiMixViewModel.swift in Sources */,
 				334269B12CDB406A0033762F /* UIColorMarshalling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
