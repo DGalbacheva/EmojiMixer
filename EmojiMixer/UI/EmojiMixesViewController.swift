@@ -8,14 +8,8 @@
 import UIKit
 
 final class EmojiMixesViewController: UIViewController {
-    private let emojies = [
-        "🍇", "🍈", "🍉", "🍊", "🍋", "🍌", "🍍", "🥭", "🍎", "🍏", "🍐", "🍒",
-        "🍓", "🫐", "🥝", "🍅", "🫒", "🥥", "🥑", "🍆", "🥔", "🥕", "🌽", "🌶️",
-        "🫑", "🥒", "🥬", "🥦", "🧄", "🧅", "🍄"
-    ]
-    
-    private var visibleEmojis: [String] = []
-    
+    private var viewModel: EmojiMixesViewModel!
+
     private let collectionView: UICollectionView = {
         let collectionView = UICollectionView(
             frame: .zero,
@@ -28,36 +22,26 @@ final class EmojiMixesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let navBar = navigationController?.navigationBar {
-            let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNextEmoji))
+            let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewEmojiMix))
             navBar.topItem?.setRightBarButton(rightButton, animated: false)
-            
-            let leftButton = UIBarButtonItem(barButtonSystemItem: .undo, target: self, action: #selector(removeLastEmoji))
+
+            let leftButton = UIBarButtonItem(
+                title: NSLocalizedString("Delete All", comment: ""),
+                style: .plain,
+                target: self,
+                action: #selector(deleteAll)
+            )
             navBar.topItem?.setLeftBarButton(leftButton, animated: false)
+
         }
         setupCollectionView()
-    }
-    
-    @objc
-    private func addNextEmoji() {
-        guard visibleEmojis.count < emojies.count else { return }
-        
-        let nextEmojiIndex = visibleEmojis.count
-        visibleEmojis.append(emojies[nextEmojiIndex])
-        collectionView.performBatchUpdates {
-            collectionView.insertItems(at: [IndexPath(item: nextEmojiIndex, section: 0)])
+        viewModel = EmojiMixesViewModel()
+        viewModel.emojiMixesBinding = { [weak self] _ in
+            guard let self = self else { return }
+            self.collectionView.reloadData()
         }
     }
-    
-    @objc
-    private func removeLastEmoji() {
-        guard visibleEmojis.count > 0 else { return }
-        
-        let lastEmojiIndex = visibleEmojis.count - 1
-        visibleEmojis.removeLast()
-        collectionView.performBatchUpdates {
-            collectionView.deleteItems(at: [IndexPath(item: lastEmojiIndex, section: 0)])
-        }
-    }
+
     private func setupCollectionView() {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
@@ -67,9 +51,21 @@ final class EmojiMixesViewController: UIViewController {
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
-        
+
+        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+
         collectionView.dataSource = self
         collectionView.delegate = self
+    }
+
+    @objc
+    private func addNewEmojiMix() {
+        viewModel.addEmojiMixTapped()
+    }
+
+    @objc
+    private func deleteAll() {
+        viewModel.deleteAll()
     }
 }
 
@@ -78,7 +74,7 @@ extension EmojiMixesViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        return visibleEmojis.count
+        return viewModel.emojiMixes.count
     }
     
     func collectionView(
@@ -86,8 +82,7 @@ extension EmojiMixesViewController: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! EmojiMixCollectionViewCell
-        
-        cell.titleLabel.text = visibleEmojis[indexPath.row]
+        cell.viewModel = viewModel.emojiMixes[indexPath.item]
         return cell
     }
 }
@@ -104,7 +99,12 @@ extension EmojiMixesViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return CGSize(width: collectionView.bounds.width / 2, height: 50)
+        let insets = collectionView.contentInset
+        let availableWidth = collectionView.bounds.width - insets.left - insets.right
+        let minSpacing = 10.0
+        let itemsPerRow = 2.0
+        let itemWidth = (availableWidth - (itemsPerRow - 1) * minSpacing)  / itemsPerRow
+        return CGSize(width: itemWidth, height: itemWidth)
     }
     
     func collectionView(
@@ -112,7 +112,6 @@ extension EmojiMixesViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         minimumInteritemSpacingForSectionAt section: Int
     ) -> CGFloat {
-        return 0
+        return 10.0
     }
 }
-
