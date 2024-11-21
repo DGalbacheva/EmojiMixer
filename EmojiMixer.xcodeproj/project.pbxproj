@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330652C12CEF644600CDC655 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 330652BF2CEF644600CDC655 /* Localizable.strings */; };
 		334269442CD352D70033762F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334269432CD352D70033762F /* AppDelegate.swift */; };
 		334269462CD352D70033762F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334269452CD352D70033762F /* SceneDelegate.swift */; };
 		334269482CD352D70033762F /* EmojiMixesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334269472CD352D70033762F /* EmojiMixesViewController.swift */; };
@@ -25,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		330652C02CEF644600CDC655 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		330652C22CEF648D00CDC655 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		330652C32CEF649500CDC655 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		330652C42CEF649C00CDC655 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		334269402CD352D70033762F /* EmojiMixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiMixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		334269432CD352D70033762F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		334269452CD352D70033762F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		330652BE2CEF642F00CDC655 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				330652BF2CEF644600CDC655 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		334269372CD352D70033762F = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +87,7 @@
 		334269422CD352D70033762F /* EmojiMixer */ = {
 			isa = PBXGroup;
 			children = (
+				330652BE2CEF642F00CDC655 /* Resources */,
 				334269AD2CDB3F220033762F /* Domain */,
 				334269AC2CDB3EF90033762F /* UI */,
 				334269432CD352D70033762F /* AppDelegate.swift */,
@@ -160,6 +174,9 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				de,
+				ru,
 			);
 			mainGroup = 334269372CD352D70033762F;
 			productRefGroup = 334269412CD352D70033762F /* Products */;
@@ -177,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3342694D2CD352D90033762F /* Assets.xcassets in Resources */,
+				330652C12CEF644600CDC655 /* Localizable.strings in Resources */,
 				334269502CD352D90033762F /* Base in Resources */,
 				3342694B2CD352D70033762F /* Base in Resources */,
 			);
@@ -207,6 +225,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		330652BF2CEF644600CDC655 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				330652C02CEF644600CDC655 /* en */,
+				330652C22CEF648D00CDC655 /* ar */,
+				330652C32CEF649500CDC655 /* de */,
+				330652C42CEF649C00CDC655 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		334269492CD352D70033762F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -231,6 +260,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -294,6 +324,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
